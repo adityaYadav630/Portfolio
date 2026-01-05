@@ -1,0 +1,234 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BASE ================= */
+
+body{
+  overflow-x: hidden;
+  background: #e5e5e5;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3{
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  right: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo img{
+  height: 44px;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  position: relative;
+}
+
+nav a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #fe424d;
+  transition: width 0.35s ease;
+}
+
+nav a:hover::after{
+  width: 100%;
+}
+
+nav button{
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav button:hover{
+  background-color: #fe424d;
+  color: white;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  height: 100vh;
+  display: flex;
+}
+
+/* ================= HERO LEFT ================= */
+
+.hero-left{
+  width: 45%;
+  padding: 160px 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFade 0.8s ease forwards;
+}
+
+.hero-left h4{
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: 14px;
+  font-size: 3rem;
+}
+
+/* === GLOWING NAME TEXT === */
+.hero-left h1{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #000, #fe424d, #000);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGlow 3s linear infinite;
+}
+
+/* === PARAGRAPH ANIMATION === */
+.hero-left p{
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 85%;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: textFade 0.8s ease forwards;
+  animation-delay: 0.4s;
+  font-size: 2rem;
+}
+
+.hero-left p span{
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #000, #1253ad, #000);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGlow 3s linear infinite;
+}
+
+/* ================= SOCIALS ================= */
+
+.socials{
+  margin-top: auto;
+  display: flex;
+  gap: 18px;
+}
+
+.socials a{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.socials a:hover{
+  background: #fe424d;
+  color: #fff !important;
+  transform: translateY(-4px);
+}
+
+/* ================= HERO RIGHT ================= */
+
+.hero-right{
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+}
+
+.hero-right img{
+  max-width: 70%;
+  height: 70%;
+  border-radius: 18px;
+  opacity: 0;
+  transform: scale(0.96);
+  animation: imgFade 0.9s ease forwards, float 4s ease-in-out infinite;
+  animation-delay: 0.2s;
+  transition: 0.4s ease;
+  box-shadow: 0 0 0 rgba(254, 66, 77, 0);
+  opacity: 0;
+}
+
+.hero-right img:hover{
+  transform: scale(1.03);
+  box-shadow:
+    0 0 25px rgba(254, 66, 77, 0.6),
+    0 0 60px rgba(254, 66, 77, 0.45),
+    0 0 120px rgba(254, 66, 77, 0.25);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes heroFade{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes imgFade{
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float{
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.01); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes textGlow{
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+@keyframes textFade{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body{
+      height:100vh;
+      width:100vw;
+      display:flex;
+    }
+
+    /* Left section (like your hero text area) */
+    .left{
+      flex:1;
+      background:#f2f2f2;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:3rem;
+    }
+
+    .content h1{
+      font-size:3rem;
+      font-weight:600;
+      color:#8b1d1d;
+      margin-bottom:1rem;
+    }
+
+    .content p{
+      font-size:1.2rem;
+      color:#444;
+      max-width:420px;
+      line-height:1.6;
+    }
+
+    .content a{
+      display:inline-block;
+      margin-top:2rem;
+      padding:.8rem 1.8rem;
+      background:#000;
+      color:#fff;
+      text-decoration:none;
+      border-radius:30px;
+      transition:.3s;
+    }
+
+    .content a:hover{
+      background:#333;
+    }
+
+    /* Right section (dark image side) */
+    .right{
+      flex:1;
+      background:#0f0f0f;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .card{
+      width:320px;
+      height:420px;
+      background:#1a1a1a;
+      border-radius:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#777;
+      animation: fade 1s ease forwards;
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+      body{
+        flex-direction:column;
+      }
+      .right{
+        display:none;
+      }
+      .content h1{
+        font-size:2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="left">
+    <div class="content">
+      <h1>Thank You.</h1>
+      <p>
+        Your message has been received.  
+        I’ll get back to you as soon as possible.
+      </p>
+      <a href="/">Back to Home</a>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="card">
+      Message Sent ✓
+    </div>
+  </div>
+
+</body>
+</html>
