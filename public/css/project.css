@@ -1,71 +1,133 @@
-/* Projects Section CSS */
+/* ===== Projects Section ===== */
 #projects {
-  padding: 80px 50px;
-  background: #f4f4f4;
+  padding: 100px 60px;
+  background: radial-gradient(circle at top, #0f0f0f, #050505);
   text-align: center;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: #222;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 3rem;
+  margin-bottom: 70px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
+/* ===== Grid ===== */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 45px;
 }
 
+/* ===== Card ===== */
 .project-card {
-  background: #fff;
-  border-radius: 15px;
+  position: relative;
+  height: 520px;
+  background: linear-gradient(145deg, #151515, #0b0b0b);
+  border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* glowing border */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(178,34,34,0.6),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  transform: translateY(-20px) scale(1.03);
+  box-shadow: 0 50px 120px rgba(178,34,34,0.45);
 }
 
+/* ===== Image ===== */
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: 55%;
   object-fit: cover;
+  transition: transform 0.8s ease;
 }
 
+.project-card:hover img {
+  transform: scale(1.12);
+}
+
+/* ===== Info ===== */
 .project-info {
-  padding: 20px;
+  padding: 25px 25px 30px;
   text-align: left;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-info h3 {
+  font-size: 1.6rem;
   margin-bottom: 10px;
-  color: #b22222; /* dark red accent like your name color */
+  color: #fff;
 }
 
 .project-info p {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #cfcfcf;
+  line-height: 1.6;
+}
+
+/* ===== Tech Tags ===== */
+.tech-tags {
+  margin-top: 15px;
 }
 
 .tech-tags span {
   display: inline-block;
-  background: #222;
+  padding: 6px 14px;
+  margin: 5px 6px 0 0;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
   color: #fff;
-  padding: 5px 10px;
-  border-radius: 8px;
-  margin-right: 5px;
-  font-size: 0.8rem;
-  transition: background 0.3s;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.4s ease;
 }
 
 .tech-tags span:hover {
   background: #b22222;
-  cursor: default;
+  border-color: #b22222;
+  transform: translateY(-3px);
+}
+
+/* ===== Subtle Floating Animation ===== */
+.project-card {
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
