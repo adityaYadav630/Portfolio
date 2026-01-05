@@ -3,56 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfolio Hero</title>
+
+  <!-- CSS FILES -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/project.css">
   <link rel="stylesheet" href="css/contact.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+
+  <!-- SCROLL FIX -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      scroll-margin-top: 120px; /* navbar height fix */
+    }
+  </style>
 </head>
+
 <body>
 
+<!-- ===== NAVBAR ===== -->
 <header class="navbar">
-  <div class="logo"><img class="glow-logo" src="images/logo2.svg" alt=""></div>
+  <div class="logo">
+    <img class="glow-logo" src="images/logo2.svg" alt="">
+  </div>
   <nav>
-    <a href="#">About me</a>
-    <a href="#">Skills</a>
-    <a href="#">Portfolio</a>
-    <button>CONTACT ME</button>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Project</a>
+    <a href="#contact" class="contact-btn">CONTACT ME</a>
   </nav>
 </header>
 
-<section class="hero">
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
   <div class="hero-left">
     <h4>Hi, I am</h4>
     <h1>Aditya Yadav</h1>
-    <p>I am a passionate <br> <span id="element"></span> </p>
+    <p>I am a passionate <br> <span id="element"></span></p>
 
     <div class="socials">
-<a href="https://www.instagram.com" target="_blank" style="color:black;">
-  <i class="fab fa-instagram fa-2x"></i>
-</a>
-<a href="https://github.com/adityaYadav630" target="_blank" style="color:black; margin-right:10px;">
-  <i class="fab fa-github fa-2x"></i>
-</a><a href="https://www.linkedin.com/in/aditya-yadav-935990381" target="_blank" style="color:black; margin-right:10px;">
-  <i class="fab fa-linkedin fa-2x"></i>
-</a>    </div>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+      <a href="https://github.com/adityaYadav630" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://www.linkedin.com/in/aditya-yadav-935990381" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+    </div>
   </div>
 
   <div class="hero-right">
     <img src="images/Gemini_Generated_Image_lcv7i1lcv7i1lcv7.png" alt="person">
   </div>
 </section>
+
+<!-- ===== ABOUT ===== -->
 <section id="about" class="about-section">
   <div class="about-container">
+
     <div class="about-image">
-      <img src="images/Gemini_Generated_Image_lcv7i1lcv7i1lcv7.png" alt="Aditya Yadav">
+      <img src="images/Gemini_Generated_Image_lcv7i1lcv7i1lcv7.png" alt="">
     </div>
 
     <div class="about-content">
       <h2>About Me</h2>
       <p>
-        I am Aditya Yadav, a Full-Stack Developer and a student with hands-on experience in building dynamic, user-focused web applications. I specialize in both front-end and back-end technologies, creating scalable and efficient solutions.
+        I am Aditya Yadav, a Full-Stack Developer with strong backend knowledge
+        and solid problem-solving skills using DSA with C++.
       </p>
+
+      <!-- SKILLS ANCHOR (FOR NAVBAR) -->
+      <div id="skills-anchor"></div>
 
       <div class="tabs">
         <button class="tab-btn active" onclick="openTab(event,'skills')">Skills</button>
@@ -60,147 +82,131 @@
         <button class="tab-btn" onclick="openTab(event,'certifications')">Certifications</button>
       </div>
 
- <div id="skills" class="tab-content active">
-  <ul>
+      <div id="skills" class="tab-content active">
+        <ul>
     <li><strong>Languages:</strong> C++, C, Python, JavaScript (ES6+)</li>
     <li><strong>Frontend:</strong> HTML, CSS, React.js, Next.js, EJS</li>
     <li><strong>Backend:</strong> Node.js, Express.js, REST APIs, Authentication & Authorization</li>
     <li><strong>Databases:</strong> MongoDB, MySQL</li>
     <li><strong>DevOps & Tools:</strong> Git, GitHub</li>
     <li><strong>Core Concepts:</strong> DSA with C++, OOP, DBMS, OS</li>
-  </ul>
-</div>
+        </ul>
+      </div>
 
-<div id="education" class="tab-content">
-  <ul>
-    <li><strong>BCA (Bachelor of Computer Applications)</strong> - 2nd Year <br> SGPA: 1st Sem - 8.0, 2nd Sem - 9.64 3nd Sem - 7.8  <br>
-    Overall CGPA: 8.47</li>
+      <div id="education" class="tab-content">
+        <ul>
+    <li><strong>BCA (Bachelor of Computer Applications)</strong> - 2nd Year <br> SGPA: 1st Sem - 8.0, 2nd Sem - 9.64 </li>
     <li><strong>Intermediate (12th)</strong> - Completed 84%</li>
     <li><strong>High School (10th)</strong> - Completed 84.5%</li>
-  </ul>
-</div>
+        </ul>
+      </div>
 
-<div id="certifications" class="tab-content">
-  <ul>
+      <div id="certifications" class="tab-content">
+        <ul>
     <li>Full-Stack Web Development Certification</li>
     <li>DSA with C++ Training</li>
     <li>Python Programming Basics Certification</li>
     <li>Frontend Development: HTML, CSS, JavaScript</li>
-  </ul>
-</div>
+        </ul>
+      </div>
 
     </div>
   </div>
-  <script>
-function openTab(evt, tabName) {
-  const tabContents = document.querySelectorAll(".tab-content");
-  const tabButtons = document.querySelectorAll(".tab-btn");
-
-  tabContents.forEach(tc => tc.classList.remove("active"));
-  tabButtons.forEach(tb => tb.classList.remove("active"));
-
-  document.getElementById(tabName).classList.add("active");
-  evt.currentTarget.classList.add("active");
-}
-</script>
 </section>
- <!-- ===== Contact Form Section ===== -->
-  <section class="contact-form-section">
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <h2 class="section-title">My Projects</h2>
+
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="images/Screenshot 2026-01-04 203254.png" alt="Wanderlust">
+      <div class="project-info">
+        <h3>Wanderlust</h3>
+        <p>Full-stack travel listing platform built with Node.js, Express, EJS & MongoDB.</p>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="images/student management.png" alt="Student Management">
+      <div class="project-info">
+        <h3>Data Management System</h3>
+        <p>CRUD based student management web application.</p>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <img src="images/Screenshot 2026-01-04 204105.png" alt="Flipkart Clone">
+      <div class="project-info">
+        <h3>Flipkart Clone</h3>
+        <p>Responsive e-commerce website built using HTML, CSS & JavaScript.</p>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card">
+      <img src="images/Screenshot 2026-01-04 205700.png" alt="Online Cafe">
+      <div class="project-info">
+        <h3>Online Cafe</h3>
+        <p>Multi-page cafe website with complete frontend functionality.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact-form-section">
+  <div class="contact-container">
+
     <div class="contact-info">
       <h2>Contact Info</h2>
       <p><i class="fas fa-phone-alt"></i> +91-6306407681</p>
       <p><i class="fas fa-envelope"></i> aditya.yadav.it.07@email.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Kanpur Nagar,Uttar Pradesh, India</p>
+      <p><i class="fas fa-map-marker-alt"></i> Kanpur Nagar, Uttar Pradesh, India</p>
     </div>
-    <form class="contact-form" action="/contact" method="post">
+
+    <form class="contact-form" method="post" action="/contact">
       <h2>Send a Message</h2>
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
       <textarea placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-  </section>
-<!-- Projects Section -->
-<section id="projects">
-  <h2 class="section-title">My Projects</h2>
-  <div class="projects-container">
-<div class="project-card">
-  <img src="images/Screenshot 2026-01-04 203254.png" alt="Wanderlust Project">
-  <div class="project-info">
-    <h3>Wanderlust</h3>
-    <p>A full-stack travel listing platform built with Node.js, Express, EJS & MongoDB. Live on <a href="https://wanderlust-a4j6.onrender.com/listings" target="_blank">Render</a>.</p>
-    <div class="tech-tags">
-      <span>Node.js</span>
-      <span>Express</span>
-      <span>EJS</span>
-      <span>MongoDB</span>
-    </div>
+
   </div>
-</div>
+</section>
 
 
-    <div class="project-card">
-      <img src="imgaes/student management.png" alt="Project 2">
-      <div class="project-info">
-        <h3>Data Management System</h3>
-        <p>A student profile management web app that lets you create, view, edit, and delete student data. Profiles display a photo and username, with clear buttons for each action, organized in a grid layout for easy browsing.</p>
-        <div class="tech-tags">
-          <span>React</span>
-          <span>Node</span>
-          <span>MongoDB</span>
-        </div>
-      </div>
-    </div>
-
- <div class="project-card">
-  <img src="images/Screenshot 2026-01-04 204105.png" alt="Project 3">
-  <div class="project-info">
-    <h3>Flipkart Clone App</h3>
-    <p>Responsive e-commerce web app replicating Flipkart, built with HTML, CSS & JS.</p>
-    <div class="tech-tags">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JS</span>
-    </div>
-  </div>
-</div>
-
-    <div class="project-card">
-      <img src="Screenshot 2026-01-04 205700.png" alt="Project 1">
-      <div class="project-info">
-        <h3>Online Cafe</h3>
-        <p>A simple interactive Cafe site  built with multiple web pages that perform all frontend work perfectly usiing HTML, CSS & JS.</p>
-        <div class="tech-tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JS</span>
-        </div>
-      </div>
-    </div>  
-
-
+<!-- ===== TYPED JS ===== -->
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 <script>
-var typed = new Typed('#element', {
-  strings: [
-    "Full-Stack Web Developer",
-    "Backend Developer",
-    "Database Engineer",
-    "DSA Problem Solver"
-  ],
-  typeSpeed: 55,
-  backSpeed: 30,
-  backDelay: 1400,
-  startDelay: 500,
-  loop: true,
-  smartBackspace: true,
-  fadeOut: false,
-  shuffle: false,
-  showCursor: true,
-  cursorChar: "|"
-});
+  new Typed('#element', {
+    strings: [
+      "Full-Stack Web Developer",
+      "Backend Developer",
+      "Database Engineer",
+      "DSA Problem Solver"
+    ],
+    typeSpeed: 55,
+    backSpeed: 30,
+    loop: true
+  });
+</script>
+
+<!-- ===== TAB JS ===== -->
+<script>
+function openTab(evt, tabName) {
+  document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById(tabName).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
 </script>
 
 </body>
 </html>
-
